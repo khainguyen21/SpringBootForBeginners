@@ -1,9 +1,14 @@
 package com.khaidevcode;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class SoftwareEngineer {
+    @Id
     private Integer id;
     private String name;
     private List<String> techStack;
