@@ -24,7 +24,13 @@ public class SoftwareEngineerController {
     @GetMapping("{id}")
     public SoftwareEngineer getEngineersById(@PathVariable Integer id) {
         // fetch data from amigos database and in software-engineer table
-        return softwareEngineerService.getAllSoftwareEngineersById(id);
+        return softwareEngineerService.getSoftwareEngineerById(id);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteEngineersById(@PathVariable Integer id) {
+        // fetch data from amigos database and in software-engineer table
+        softwareEngineerService.deleteSoftwareEngineerById(id);
     }
 
     @PostMapping

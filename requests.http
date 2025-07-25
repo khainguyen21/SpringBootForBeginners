@@ -10,9 +10,15 @@ POST http://localhost:8080/api/v1/software-engineers
 Content-Type: application/json
 
 {
-  "name": "Alex",
-  "techStack": "kbd, database, q"
+  "name": "Jamila",
+  "techStack": "java, springboot"
 }
 
+
 ###
-GET http://localhost:8080/api/v1/software-engineers/1
+GET http://localhost:8080/api/v1/software-engineers
+
+###
+DELETE localhost:8080/api/v1/software-engineers/2
+
+
