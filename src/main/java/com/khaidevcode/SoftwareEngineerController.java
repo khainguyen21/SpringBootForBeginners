@@ -21,6 +21,12 @@ public class SoftwareEngineerController {
         return softwareEngineerService.getAllSoftwareEngineers();
     }
 
+    @GetMapping("{id}")
+    public SoftwareEngineer getEngineersById(@PathVariable Integer id) {
+        // fetch data from amigos database and in software-engineer table
+        return softwareEngineerService.getAllSoftwareEngineersById(id);
+    }
+
     @PostMapping
     public void addNewSoftwareEngineer(@RequestBody SoftwareEngineer softwareEngineer) {
         // add data to amigos database and to software-engineer table
