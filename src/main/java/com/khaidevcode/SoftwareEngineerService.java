@@ -28,6 +28,17 @@ public class SoftwareEngineerService {
 
     public void deleteSoftwareEngineerById(Integer id) {
         softwareEngineerRepository.deleteById(id);
+
+
+
     }
 
+    public void updateSoftwareEngineerById(Integer id, SoftwareEngineer updatedSoftwareEngineer) {
+        SoftwareEngineer softwareEngineer = softwareEngineerRepository.findById(id)
+                .orElseThrow(() -> new IllegalStateException(id + " not found"));
+
+        softwareEngineer.setName(updatedSoftwareEngineer.getName());
+        softwareEngineer.setTechStack(updatedSoftwareEngineer.getTechStack());
+        softwareEngineerRepository.save(softwareEngineer);
+    }
 }

@@ -10,15 +10,24 @@ POST http://localhost:8080/api/v1/software-engineers
 Content-Type: application/json
 
 {
-  "name": "Jamila",
+  "name": "Joe",
   "techStack": "java, springboot"
 }
 
 
 ###
-GET http://localhost:8080/api/v1/software-engineers
+GET http://localhost:8080/api/v1/software-engineers/2
 
 ###
 DELETE localhost:8080/api/v1/software-engineers/2
+
+###
+PUT localhost:8080/api/v1/software-engineers/2
+Content-Type: application/json
+
+{
+  "name": "Hihi",
+  "techStack": "haha"
+}
 
 

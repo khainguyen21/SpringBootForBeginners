@@ -16,7 +16,7 @@ public class SoftwareEngineerController {
     }
 
     @GetMapping
-    public List<SoftwareEngineer> getEngineers () {
+    public List<SoftwareEngineer> getEngineers() {
         // fetch data from amigos database and in software-engineer table
         return softwareEngineerService.getAllSoftwareEngineers();
     }
@@ -37,5 +37,12 @@ public class SoftwareEngineerController {
     public void addNewSoftwareEngineer(@RequestBody SoftwareEngineer softwareEngineer) {
         // add data to amigos database and to software-engineer table
         softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
+    }
+
+    @PutMapping("{id}")
+    public void updateSoftwareEngineerById(@RequestBody SoftwareEngineer softwareEngineer,
+                                           @PathVariable Integer id) {
+        softwareEngineerService.updateSoftwareEngineerById(id, softwareEngineer);
+
     }
 }
