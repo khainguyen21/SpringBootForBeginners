@@ -1,4 +1,4 @@
-``` markdown
+
 # Spring Boot for Beginners
 
 A Spring Boot application demonstrating basic CRUD operations for managing Software Engineers with AI integration capabilities.
@@ -13,7 +13,6 @@ A Spring Boot application demonstrating basic CRUD operations for managing Softw
 - Docker
 - Maven
 
-``` 
 ## Features
 
 - CRUD operations for Software Engineers
