@@ -84,13 +84,9 @@ bash ./mvnw test
 4. Push to the branch
 5. Create a new Pull Request
 
-## License
-
-This project is open-sourced under the [LICENSE] file in the root directory.
-
 ## Authors
 
-- @khaidevcode
+- @khainguyen21
 
 ## Acknowledgments
 
