@@ -14,7 +14,6 @@ Content-Type: application/json
   "techStack": "java, springboot"
 }
 
-
 ###
 GET http://localhost:8080/api/v1/software-engineers/2
 

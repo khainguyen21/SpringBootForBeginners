@@ -1,16 +1,16 @@
 package com.khaidevcode;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import java.util.List;
 
 @Service
 public class SoftwareEngineerService {
     private final SoftwareEngineerRepository softwareEngineerRepository;
+    private final AIService aiService;
 
-    public SoftwareEngineerService(SoftwareEngineerRepository softwareEngineerRepository) {
+    public SoftwareEngineerService(SoftwareEngineerRepository softwareEngineerRepository, AIService aiService) {
         this.softwareEngineerRepository = softwareEngineerRepository;
+        this.aiService = aiService;
     }
 
     public List<SoftwareEngineer> getAllSoftwareEngineers() {
@@ -18,6 +18,15 @@ public class SoftwareEngineerService {
     }
 
     public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer) {
+        String prompt = String.format("Based on the programming tech " +
+                        "stack %s that %s has given Provided a full " +
+                        "learning path and recommendations for this person ",
+                softwareEngineer.getTechStack(),
+                softwareEngineer.getName()
+        );
+
+        String chatRes = aiService.chat(prompt);
+        softwareEngineer.setLearningPathRecommendation(chatRes);
         softwareEngineerRepository.save(softwareEngineer);
     }
 
@@ -28,9 +37,6 @@ public class SoftwareEngineerService {
 
     public void deleteSoftwareEngineerById(Integer id) {
         softwareEngineerRepository.deleteById(id);
-
-
-
     }
 
     public void updateSoftwareEngineerById(Integer id, SoftwareEngineer updatedSoftwareEngineer) {
